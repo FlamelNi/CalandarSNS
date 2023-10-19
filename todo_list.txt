@@ -1,0 +1,57 @@
+
+
+https://aggie.io/v04x_3y00e
+
+
+1.UI/navigation
+Week view
+    if event is clicked, it should display info of the event, and allow user to change its details
+Month view
+    if a day is clicked, it should display week of that day
+
+event
+    name, date, time(start, end), location
+    share-level
+
+group event view (ui not finalized)
+    should be able to see all group events
+    By clicking each group events, users should be able to manipulate group events features
+
+friend lists
+    should be able to look up my friends, and search other people and friend-request them
+    if friend-requested, the recipient should receieve, see, and be able to confirm the request (UI not finalized)
+
+settings
+
+
+2.Data
+
+user login using google auth
+
+google firestore for now(?)
+    other database would be better, but this is easier to install. Not finalized atm
+
+need to host this to working domain as well
+
+
+
+3.Logic/feature
+
+public/friendly/private/secret schedules
+    public: anyone can see this event and its details
+    friendly: only friends can see this event and its details. Hidden for non-friends
+    private: only friends can see this event exists, but not its details. Hidden for non-friends
+    secret: hidden for everyone
+
+group event creation
+    If group creation is initiated, it creates new group event room that can be linked from group event view
+    Room should be able to invite a friend to the event. (Friend has to accept in notification)
+    Room should also provide week/month view and find non-overlapping space for groups to decide time for this event.
+    Once finalized by room leader, this creates event for each users week/month views. Privacy is automatically set to private, but this can be changed individually
+    Users can still access this room after it is finalized, and room leader can change its detail if needed
+
+
+
+
+
+
