@@ -8,13 +8,15 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import { MainPageComponent } from './main-page/main-page.component';
 import { CalandarViewComponent } from './calandar-view/calandar-view.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { EventFormComponent } from './event-form/event-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainPageComponent,
     CalandarViewComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    EventFormComponent
   ],
   imports: [
     BrowserModule,
