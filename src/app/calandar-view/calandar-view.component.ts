@@ -2,7 +2,9 @@ import { Component, Input } from '@angular/core';
 import { CalendarOptions } from '@fullcalendar/core'; // useful for typechecking
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
-import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { EventFormComponent } from '../event-form/event-form.component';
+import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
+// import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -13,7 +15,6 @@ import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 export class CalandarViewComponent {
   @Input() viewType!: String;
   title = 'test';
-  private modalService: NgbModal
 
   calendarOptions: CalendarOptions = {
     height: this.calculateCalandarHeight(),
@@ -26,32 +27,32 @@ export class CalandarViewComponent {
     }
   };
 
-  calculateCalandarHeight(){
+  calculateCalandarHeight() {
     return parent.innerHeight*.9;
   }
-  changeCalandarHeight(){
+  changeCalandarHeight() {
     this.calendarOptions.height = this.calculateCalandarHeight();
   }
 
+  modalRef: MdbModalRef<EventFormComponent> | null = null;
+  constructor(private modalService: MdbModalService) {}
+
   openEventForm() {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    this.modalRef = this.modalService.open(EventFormComponent, {
+      data: {
+        someDetail: "tester detail"
+      },
+    });
+    this.modalRef.onClose.subscribe((message:any) => {
+      this.applyFormChange(message);
     });
   }
-  
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return `with: ${reason}`;
-    }
+
+  applyFormChange(message: any) {
+    
   }
 
-  callSomeLogic(){
+  callSomeLogic() {
     // console.log(this.viewType);
   }
 

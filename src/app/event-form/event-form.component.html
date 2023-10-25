@@ -1,1 +1,58 @@
-<p>event-form works!</p>
+
+
+<!-- https://mdbootstrap.com/docs/angular/components/modal/ -->
+<!-- https://ej2.syncfusion.com/angular/documentation/timepicker/getting-started#:~:text=in%20your%20application.-,Adding%20TimePicker%20component,template%20section%20of%20the%20%5Bapp. -->
+
+
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">{{ title }}</h5>
+    <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="modalRef.close()"
+    ></button>
+</div>
+
+<div class="modal-body">
+    <label for="exampleFormControlInput1" class="form-label">Event name</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="My event">
+    
+    <label for="exampleFormControlInput1" class="form-label">Date</label>
+    <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="">
+
+    <label for="exampleFormControlInput1" class="form-label">Start time</label>
+    <input type="time" class="form-control" id="exampleFormControlInput1" placeholder="">
+
+    <label for="exampleFormControlInput1" class="form-label">End time</label>
+    <input type="time" class="form-control" id="exampleFormControlInput1" placeholder="">
+
+    <label for="exampleFormControlInput1" class="form-label">Location</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+
+
+    <!-- <div class="mb-3">
+    </div> -->
+
+
+    <!-- <mdb-form-control>
+        <input mdbInput type="text" id="form1" class="form-control">
+        <label mdbLabel class="form-label" for="form1">Tester</label>
+    </mdb-form-control>
+
+    <mdb-form-control>
+        <input mdbInput type="text" id="form2" class="form-control">
+        <label mdbLabel class="form-label" for="form2">Example label</label>
+    </mdb-form-control> -->
+
+    <!-- <div class="container-form-input">
+    </div> -->
+    {{someDetail}}
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
+      Close
+    </button>
+    <button type="button" class="btn btn-primary" (click)="modalRef.close(someDetail)">Save changes</button>
+</div>
