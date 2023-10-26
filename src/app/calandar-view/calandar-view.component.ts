@@ -49,7 +49,7 @@ export class CalandarViewComponent {
   }
 
   applyFormChange(message: any) {
-    
+    console.log(message);
   }
 
   callSomeLogic() {

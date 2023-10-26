@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
+import { Event } from '../dataStructure/dataStructure'
 
 @Component({
   selector: 'app-event-form',
@@ -10,6 +11,9 @@ export class EventFormComponent {
   title = "Event Form";
 
   someDetail: String | null = null;
+  currentEvent: Event = new Event('');
+  testName: String = "";
+
 
   constructor(public modalRef: MdbModalRef<Component>) {}
 

@@ -16,19 +16,19 @@
 
 <div class="modal-body">
     <label for="exampleFormControlInput1" class="form-label">Event name</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="My event">
+    <input type="text" [(ngModel)]="currentEvent.name" class="form-control" id="exampleFormControlInput1" placeholder="My event">
     
     <label for="exampleFormControlInput1" class="form-label">Date</label>
-    <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="">
+    <input type="date" [(ngModel)]="currentEvent.date" class="form-control" id="exampleFormControlInput1" placeholder="">
 
     <label for="exampleFormControlInput1" class="form-label">Start time</label>
-    <input type="time" class="form-control" id="exampleFormControlInput1" placeholder="">
+    <input type="time" [(ngModel)]="currentEvent.startTime" class="form-control" id="exampleFormControlInput1" placeholder="">
 
     <label for="exampleFormControlInput1" class="form-label">End time</label>
-    <input type="time" class="form-control" id="exampleFormControlInput1" placeholder="">
+    <input type="time" [(ngModel)]="currentEvent.endTime" class="form-control" id="exampleFormControlInput1" placeholder="">
 
     <label for="exampleFormControlInput1" class="form-label">Location</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+    <input type="text" [(ngModel)]="currentEvent.location" class="form-control" id="exampleFormControlInput1" placeholder="">
 
 
     <!-- <div class="mb-3">
@@ -54,5 +54,5 @@
     <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
       Close
     </button>
-    <button type="button" class="btn btn-primary" (click)="modalRef.close(someDetail)">Save changes</button>
+    <button type="button" class="btn btn-primary" (click)="modalRef.close(currentEvent)">Save changes</button>
 </div>
