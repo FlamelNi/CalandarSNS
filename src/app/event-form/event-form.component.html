@@ -15,20 +15,28 @@
 </div>
 
 <div class="modal-body">
-    <label for="exampleFormControlInput1" class="form-label">Event name</label>
-    <input type="text" [(ngModel)]="currentEvent.name" class="form-control" id="exampleFormControlInput1" placeholder="My event">
+
+    <!-- <ng-template [ngIf]="condition"> -->
+        <div class="red">
+            {{formErrorMsg}}
+        </div>
+    <!-- </ng-template> -->
     
-    <label for="exampleFormControlInput1" class="form-label">Date</label>
-    <input type="date" [(ngModel)]="currentEvent.date" class="form-control" id="exampleFormControlInput1" placeholder="">
 
-    <label for="exampleFormControlInput1" class="form-label">Start time</label>
-    <input type="time" [(ngModel)]="currentEvent.startTime" class="form-control" id="exampleFormControlInput1" placeholder="">
+    <label for="testerid_1" class="form-label">Event name</label>
+    <input type="text" [(ngModel)]="tempEvent.name" class="form-control" id="testerid_1" placeholder="{{EVENT_FORM_PLACEHOLDER}}">
+    
+    <label for="testerid_2" class="form-label">Date</label>
+    <input type="date" [(ngModel)]="tempEvent.date" class="form-control" id="testerid_2" placeholder="">
 
-    <label for="exampleFormControlInput1" class="form-label">End time</label>
-    <input type="time" [(ngModel)]="currentEvent.endTime" class="form-control" id="exampleFormControlInput1" placeholder="">
+    <label for="testerid_3" class="form-label">Start time</label>
+    <input type="time" [(ngModel)]="tempEvent.startTime" class="form-control" id="testerid_3" placeholder="">
 
-    <label for="exampleFormControlInput1" class="form-label">Location</label>
-    <input type="text" [(ngModel)]="currentEvent.location" class="form-control" id="exampleFormControlInput1" placeholder="">
+    <label for="testerid_4" class="form-label">End time</label>
+    <input type="time" [(ngModel)]="tempEvent.endTime" class="form-control" id="testerid_4" placeholder="">
+
+    <label for="testerid_5" class="form-label">Location</label>
+    <input type="text" [(ngModel)]="tempEvent.location" class="form-control" id="testerid_5" placeholder="">
 
 
     <!-- <div class="mb-3">
@@ -54,5 +62,7 @@
     <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
       Close
     </button>
-    <button type="button" class="btn btn-primary" (click)="modalRef.close(currentEvent)">Save changes</button>
+    <!-- <button type="button" class="btn btn-primary" (click)="modalRef.close(tempEvent)">Save changes</button> -->
+    <button type="button" class="btn btn-primary" (click)="this.attemptToSave(modalRef,tempEvent)">Save changes</button>
+    
 </div>

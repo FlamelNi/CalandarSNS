@@ -1,12 +1,10 @@
+
 <div class="container" (window:resize)="changeCalandarHeight()">
     <div class="container-calandar-top-bar">
         <div *ngIf="this.viewType=='main'">
-            <button class="btn btn-primary" (click)="openEventForm()">Add event</button>
+            <button class="btn btn-primary" (click)="openNewEventForm()">Add event</button>
         </div>
     </div>
     
-    <full-calendar [options]="calendarOptions" ></full-calendar>
-    
-
-
+    <full-calendar [options]="calendarOptions"></full-calendar>
 </div>
